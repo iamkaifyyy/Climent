@@ -2,6 +2,8 @@ import Layout from "./components/layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import WeatherDashboard from "./pages/weather-dashboard";
+import CityPage from "./pages/city-page";
 
 function App() {
   return (
@@ -9,7 +11,9 @@ function App() {
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <Layout>
           <Routes>
-            <Route path="/" element ={<></>} />
+            <Route path="/" element ={<WeatherDashboard />} />
+            <Route path="/city/:cityName" element ={<CityPage />} />
+
           </Routes>
         </Layout>
       </ThemeProvider>
